@@ -12,15 +12,17 @@ function TodoInput() {
   };
 
   const addTodo = () => {
-    setTodoList((preVals) => [
-      ...preVals,
-      {
-        id: uniqueId(),
-        text: todoText,
-        completed: false
-      }
-    ]);
-    setTodoText('');
+    if(todoText){
+      setTodoList((preVals) => [
+        ...preVals,
+        {
+          id: uniqueId(),
+          text: todoText,
+          completed: false
+        }
+      ]);
+      setTodoText('');
+    }
   };
 
   return (
